@@ -1,27 +1,58 @@
 import { menuArray } from "/data.js";
 
-const root = document.getElementById("container");
-const totalBox = document.getElementById("totalBox");
+const Container = document.getElementById("container");
+const billBox = document.getElementById("billBox");
 
 function render() {
   const items = menuArray.map((item) => {
-    return `<div class="item" id="item">
-     </div>
-     
+    return `
+       <div class="item" id="item">
+          <p>${item.emoji}</p>
+          <p>${item.price}</p>
+          <button id="add-${item.name}">+</button>
+        </div>
     `;
   });
 
   return items;
 }
 
-root.innerHTML = render();
+Container.innerHTML = render();
 
-const item = document.getElementById("item");
+document
+  .getElementById(`add-${menuArray[0].name}`)
+  .addEventListener("click", () => {
+    billBox.style.visibility = "visible";
+    document.getElementById("pizza-bill").style.display = "flex";
+  });
+document
+  .getElementById(`add-${menuArray[1].name}`)
+  .addEventListener("click", () => {
+    billBox.style.visibility = "visible";
+    document.getElementById("burgur-bill").style.visibility = "visible";
+  });
+document
+  .getElementById(`add-${menuArray[2].name}`)
+  .addEventListener("click", () => {
+    billBox.style.visibility = "visible";
+    document.getElementById("beer-bill").style.display = "flex";
+  });
 
-item.addEventListener("click", () => {
-  totalBox.style.visibility = "visible";
-});
-
-totalBox.addEventListener("click", () => {
-  document.getElementById("popup").style.display = "flex";
-});
+document
+  .getElementById(`remove-${menuArray[0].name}`)
+  .addEventListener("click", () => {
+    billBox.style.visibility = "visible";
+    document.getElementById("pizza-bill").style.display = "flex";
+  });
+document
+  .getElementById(`remove-${menuArray[1].name}`)
+  .addEventListener("click", () => {
+    billBox.style.visibility = "visible";
+    document.getElementById("burgur-bill").style.visibility = "visible";
+  });
+document
+  .getElementById(`remove-${menuArray[2].name}`)
+  .addEventListener("click", () => {
+    billBox.style.visibility = "visible";
+    document.getElementById("beer-bill").style.display = "";
+  });

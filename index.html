@@ -4,9 +4,34 @@
   </head>
   <body>
     <div id="root">
-      <header></header>
+      <header>
+        <div class="header-content">
+          <p>Jimmy’s Diner</p>
+          <p>The best burgers and pizzas in town.</p>
+        </div>
+      </header>
       <div class="container" id="container"></div>
-      <div class="totalBox" id="totalBox"></div>
+      <div class="billBox" id="billBox">
+        <div id="pizza-bill" class="itembill">
+          <p>Pizza</p>
+          <button id="remove-Pizza">remove</button>
+          <p id="pizza-price">14</p>
+        </div>
+        <div id="burgur-bill" class="itembill">
+          <p>Burgur</p>
+          <button id="remove-Hamburger">remove</button>
+          <p id="burgur-price">12</p>
+        </div>
+        <div id="beer-bill" class="itembill">
+          <p>Beer</p>
+          <button id="remove-Beer">remove</button>
+          <p id="beer-price">12</p>
+        </div>
+        <div class="TotalAmount">
+          <p>Total</p>
+          <p id="TotalAmount">0</p>
+        </div>
+      </div>
     </div>
 
     <div class="form" id="popup"></div>
