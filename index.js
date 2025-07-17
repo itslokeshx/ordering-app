@@ -1,4 +1,26 @@
-import { menuArray } from "/data.js";
+const menuArray = [
+  {
+    name: "Pizza",
+    ingredients: ["pepperoni", "mushrom", "mozarella"],
+    id: 0,
+    price: 14,
+    emoji: "🍕",
+  },
+  {
+    name: "Hamburger",
+    ingredients: ["beef", "cheese", "lettuce"],
+    price: 12,
+    emoji: "🍔",
+    id: 1,
+  },
+  {
+    name: "Beer",
+    ingredients: ["grain, hops, yeast, water"],
+    price: 12,
+    emoji: "🍺",
+    id: 2,
+  },
+];
 
 const Container = document.getElementById("container");
 const billBox = document.getElementById("billBox");
@@ -58,8 +80,9 @@ addPizza.addEventListener("click", () => {
     prizzaPrice += 14;
     paratwo.textContent = `$${prizzaPrice}`;
 
-    document.getElementById("TotalAmount").innerText =
-      `$${prizzaPrice + burgurPrice + beerPrice}`;
+    document.getElementById("TotalAmount").innerText = `$${
+      prizzaPrice + burgurPrice + beerPrice
+    }`;
 
     const removePizza = document.getElementById(`remove-${menuArray[0].name}`);
     removePizza.addEventListener("click", () => {
@@ -72,8 +95,9 @@ addPizza.addEventListener("click", () => {
         newDiv.style.display = "flex";
       }
 
-      document.getElementById("TotalAmount").innerText =
-        `$${prizzaPrice + burgurPrice + beerPrice}`;
+      document.getElementById("TotalAmount").innerText = `$${
+        prizzaPrice + burgurPrice + beerPrice
+      }`;
     });
   } else {
     document.getElementById("pizza-bill").style.display = "flex";
@@ -81,8 +105,9 @@ addPizza.addEventListener("click", () => {
     prizzaPrice += 14;
     document.getElementById("pizza-price").textContent = `$${prizzaPrice}`;
 
-    document.getElementById("TotalAmount").innerText =
-      `$${prizzaPrice + burgurPrice + beerPrice}`;
+    document.getElementById("TotalAmount").innerText = `$${
+      prizzaPrice + burgurPrice + beerPrice
+    }`;
   }
 
   FirstPizza = false;
@@ -112,8 +137,9 @@ addBurgur.addEventListener("click", () => {
     burgurPrice += 12;
     paratwo.textContent = `$${burgurPrice}`;
 
-    document.getElementById("TotalAmount").innerText =
-      `$${prizzaPrice + burgurPrice + beerPrice}`;
+    document.getElementById("TotalAmount").innerText = `$${
+      prizzaPrice + burgurPrice + beerPrice
+    }`;
 
     const removeBurgur = document.getElementById(`remove-${menuArray[1].name}`);
     removeBurgur.addEventListener("click", () => {
@@ -126,8 +152,9 @@ addBurgur.addEventListener("click", () => {
         newDiv.style.display = "flex";
       }
 
-      document.getElementById("TotalAmount").innerText =
-        `$${prizzaPrice + burgurPrice + beerPrice}`;
+      document.getElementById("TotalAmount").innerText = `$${
+        prizzaPrice + burgurPrice + beerPrice
+      }`;
     });
   } else {
     document.getElementById("burgur-bill").style.display = "flex";
@@ -135,8 +162,9 @@ addBurgur.addEventListener("click", () => {
     burgurPrice += 12;
     document.getElementById("burgur-price").textContent = `$${burgurPrice}`;
 
-    document.getElementById("TotalAmount").innerText =
-      `$${prizzaPrice + burgurPrice + beerPrice}`;
+    document.getElementById("TotalAmount").innerText = `$${
+      prizzaPrice + burgurPrice + beerPrice
+    }`;
   }
 
   FirstBurgur = false;
@@ -166,8 +194,9 @@ addBeer.addEventListener("click", () => {
     beerPrice += 12;
     paratwo.textContent = `$${beerPrice}`;
 
-    document.getElementById("TotalAmount").innerText =
-      `$${prizzaPrice + burgurPrice + beerPrice}`;
+    document.getElementById("TotalAmount").innerText = `$${
+      prizzaPrice + burgurPrice + beerPrice
+    }`;
 
     const removeBeer = document.getElementById(`remove-${menuArray[2].name}`);
 
@@ -181,8 +210,9 @@ addBeer.addEventListener("click", () => {
         newDiv.style.display = "flex";
       }
 
-      document.getElementById("TotalAmount").innerText =
-        `$${prizzaPrice + burgurPrice + beerPrice}`;
+      document.getElementById("TotalAmount").innerText = `$${
+        prizzaPrice + burgurPrice + beerPrice
+      }`;
     });
   } else {
     document.getElementById("beer-bill").style.display = "flex";
@@ -190,8 +220,9 @@ addBeer.addEventListener("click", () => {
     beerPrice += 12;
     document.getElementById("beer-price").textContent = `$${beerPrice}`;
 
-    document.getElementById("TotalAmount").innerText =
-      `$${prizzaPrice + burgurPrice + beerPrice}`;
+    document.getElementById("TotalAmount").innerText = `$${
+      prizzaPrice + burgurPrice + beerPrice
+    }`;
   }
 
   FirstBeer = false;
@@ -214,6 +245,6 @@ SubmitForm.addEventListener("click", (event) => {
     billBox.style.justifyContent = "center";
     billBox.style.alignItems = "center";
     billBox.style.marginTop = "10%";
-    billBox.style.marginBottom = "10%";
+    billBox.style.marginBo = "10%";
   }
 });
