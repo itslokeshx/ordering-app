@@ -11,13 +11,13 @@ function render() {
     return `
        <div class="item" id="item">
           <p>${item.emoji}</p>
-          <p>${item.price}</p>
+          <p>$${item.price}</p>
           <button id="add-${item.name}">+</button>
         </div>
     `;
   });
 
-  return items;
+  return items.join(" ");
 }
 
 Container.innerHTML = render();
@@ -56,15 +56,15 @@ addPizza.addEventListener("click", () => {
     button.innerText = "remove";
     paratwo.id = "pizza-price";
     prizzaPrice += 14;
-    paratwo.textContent = prizzaPrice;
+    paratwo.textContent = `$${prizzaPrice}`;
 
     document.getElementById("TotalAmount").innerText =
-      prizzaPrice + burgurPrice + beerPrice;
+      `$${prizzaPrice + burgurPrice + beerPrice}`;
 
     const removePizza = document.getElementById(`remove-${menuArray[0].name}`);
     removePizza.addEventListener("click", () => {
       prizzaPrice -= 14;
-      document.getElementById("pizza-price").textContent = prizzaPrice;
+      document.getElementById("pizza-price").textContent = `$${prizzaPrice}`;
 
       if (prizzaPrice == 0) {
         newDiv.style.display = "none";
@@ -73,16 +73,16 @@ addPizza.addEventListener("click", () => {
       }
 
       document.getElementById("TotalAmount").innerText =
-        prizzaPrice + burgurPrice + beerPrice;
+        `$${prizzaPrice + burgurPrice + beerPrice}`;
     });
   } else {
     document.getElementById("pizza-bill").style.display = "flex";
 
     prizzaPrice += 14;
-    document.getElementById("pizza-price").textContent = prizzaPrice;
+    document.getElementById("pizza-price").textContent = `$${prizzaPrice}`;
 
     document.getElementById("TotalAmount").innerText =
-      prizzaPrice + burgurPrice + beerPrice;
+      `$${prizzaPrice + burgurPrice + beerPrice}`;
   }
 
   FirstPizza = false;
@@ -110,15 +110,15 @@ addBurgur.addEventListener("click", () => {
     button.innerText = "remove";
     paratwo.id = "burgur-price";
     burgurPrice += 12;
-    paratwo.textContent = burgurPrice;
+    paratwo.textContent = `$${burgurPrice}`;
 
     document.getElementById("TotalAmount").innerText =
-      prizzaPrice + burgurPrice + beerPrice;
+      `$${prizzaPrice + burgurPrice + beerPrice}`;
 
     const removeBurgur = document.getElementById(`remove-${menuArray[1].name}`);
     removeBurgur.addEventListener("click", () => {
       burgurPrice -= 12;
-      document.getElementById("burgur-price").textContent = burgurPrice;
+      document.getElementById("burgur-price").textContent = `$${burgurPrice}`;
 
       if (burgurPrice == 0) {
         newDiv.style.display = "none";
@@ -127,16 +127,16 @@ addBurgur.addEventListener("click", () => {
       }
 
       document.getElementById("TotalAmount").innerText =
-        prizzaPrice + burgurPrice + beerPrice;
+        `$${prizzaPrice + burgurPrice + beerPrice}`;
     });
   } else {
     document.getElementById("burgur-bill").style.display = "flex";
 
     burgurPrice += 12;
-    document.getElementById("burgur-price").textContent = burgurPrice;
+    document.getElementById("burgur-price").textContent = `$${burgurPrice}`;
 
     document.getElementById("TotalAmount").innerText =
-      prizzaPrice + burgurPrice + beerPrice;
+      `$${prizzaPrice + burgurPrice + beerPrice}`;
   }
 
   FirstBurgur = false;
@@ -164,16 +164,16 @@ addBeer.addEventListener("click", () => {
     button.innerText = "remove";
     paratwo.id = "beer-price";
     beerPrice += 12;
-    paratwo.textContent = beerPrice;
+    paratwo.textContent = `$${beerPrice}`;
 
     document.getElementById("TotalAmount").innerText =
-      prizzaPrice + burgurPrice + beerPrice;
+      `$${prizzaPrice + burgurPrice + beerPrice}`;
 
     const removeBeer = document.getElementById(`remove-${menuArray[2].name}`);
 
     removeBeer.addEventListener("click", () => {
       beerPrice -= 12;
-      document.getElementById("beer-price").textContent = beerPrice;
+      document.getElementById("beer-price").textContent = `$${beerPrice}`;
 
       if (beerPrice == 0) {
         newDiv.style.display = "none";
@@ -182,16 +182,16 @@ addBeer.addEventListener("click", () => {
       }
 
       document.getElementById("TotalAmount").innerText =
-        prizzaPrice + burgurPrice + beerPrice;
+        `$${prizzaPrice + burgurPrice + beerPrice}`;
     });
   } else {
     document.getElementById("beer-bill").style.display = "flex";
 
     beerPrice += 12;
-    document.getElementById("beer-price").textContent = beerPrice;
+    document.getElementById("beer-price").textContent = `$${beerPrice}`;
 
     document.getElementById("TotalAmount").innerText =
-      prizzaPrice + burgurPrice + beerPrice;
+      `$${prizzaPrice + burgurPrice + beerPrice}`;
   }
 
   FirstBeer = false;
@@ -202,9 +202,18 @@ PlaceOrderBtn.addEventListener("click", () => {
 });
 
 SubmitForm.addEventListener("click", (event) => {
-  if (!document.getElementById("cvv").value == " " && !document.getElementById("cardNo").value == " " && !document.getElementById("UserName").value == " ") {
+  if (
+    !document.getElementById("cvv").value == " " &&
+    !document.getElementById("cardNo").value == " " &&
+    !document.getElementById("UserName").value == " "
+  ) {
     document.getElementById("popup").style.display = "none";
     const UserName = document.getElementById("UserName").value;
     billBox.innerHTML = `<p>Thanks ${UserName} for your Order </p>`;
+    billBox.style.display = "flex";
+    billBox.style.justifyContent = "center";
+    billBox.style.alignItems = "center";
+    billBox.style.marginTop = "10%";
+    billBox.style.marginBottom = "10%";
   }
 });
