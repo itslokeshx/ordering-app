@@ -10,7 +10,7 @@ body {
 #root {
   height: 1108px;
   width: 600px;
-  background-color: aqua;
+  border: 1px solid #d2d2d2;
   position: relative;
   display: flex;
   justify-content: center;
@@ -36,11 +36,10 @@ header {
   width: 508px;
   height: 140px;
   border-bottom: 1px solid #d2d2d2;
-  background-color: antiquewhite;
 }
 #billBox {
   margin-top: 45px;
-  background-color: blue;
+  border: 2px solid black;
   height: 319px;
   width: 508px;
   visibility: hidden;
@@ -51,15 +50,19 @@ header {
   font-size: 40px;
   flex-direction: column;
 }
-#billBox button {
+
+#billBox button:nth-child(2) {
   width: 100px;
   height: 50px;
   font-size: 28px;
 }
+#PlaceOrder {
+  width: 200px;
+  height: 70px;
+  font-size: 28px;
+}
 .itembill {
-  height: 319px;
   width: 508px;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,7 +75,9 @@ header {
   justify-content: space-between;
   width: 90%;
   border-top: 5px solid black;
+  border-bottom: 5px solid black;
 }
+
 .form {
   position: absolute;
   width: 508px;
@@ -106,13 +111,4 @@ header {
   border-radius: 100%;
   width: 80px;
   height: 80px;
-}
-#beer-bill {
-  display: none;
-}
-#burgur-bill {
-  visibility: hidden;
-}
-#pizza-bill {
-  display: none;
 }
