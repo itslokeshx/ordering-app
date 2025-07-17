@@ -19,7 +19,7 @@ body {
   background-color: white;
   display: flex;
   flex-direction: column;
-  border-radius: 16px;
+  height: 85vh;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
@@ -201,6 +201,9 @@ form button {
     align-items: flex-start;
     gap: 0.5rem;
   }
+  #root {
+    height: 100vh;
+  }
 
   .itembill {
     align-items: flex-start;
@@ -220,4 +223,8 @@ form button {
 #billBox {
   border: 1px solid #ddd;
   font-size: 1.2rem;
+}
+
+#cardtitle {
+  margin-bottom: 5%;
 }
