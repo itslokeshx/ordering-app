@@ -22,7 +22,24 @@
     </div>
 
     <div class="form" id="popup">
-      <h1>INPUT FORM</h1>
+      <h1>Enter Card Details</h1>
+      <form onsubmit="event.preventDefault(); validateMyForm();">
+        <input
+          type="text"
+          id="UserName"
+          placeholder="Enter your name"
+          required
+        />
+        <input
+          type="number"
+          placeholder="Enter card numver"
+          id="cardNo"
+          required
+        />
+        <input placeholder="Enter CVV" id="cvv" required />
+
+        <button type="submit" id="SubmitForm">Pay</button>
+      </form>
     </div>
     <script src="index.js" type="module"></script>
   </body>

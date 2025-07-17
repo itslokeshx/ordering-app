@@ -4,6 +4,7 @@ const Container = document.getElementById("container");
 const billBox = document.getElementById("billBox");
 const billBoxItems = document.getElementById("billBoxItems");
 const PlaceOrderBtn = document.getElementById("PlaceOrder");
+const SubmitForm = document.getElementById("SubmitForm");
 
 function render() {
   const items = menuArray.map((item) => {
@@ -198,4 +199,12 @@ addBeer.addEventListener("click", () => {
 
 PlaceOrderBtn.addEventListener("click", () => {
   document.getElementById("popup").style.display = "flex";
+});
+
+SubmitForm.addEventListener("click", (event) => {
+  if (!document.getElementById("cvv").value == " " && !document.getElementById("cardNo").value == " " && !document.getElementById("UserName").value == " ") {
+    document.getElementById("popup").style.display = "none";
+    const UserName = document.getElementById("UserName").value;
+    billBox.innerHTML = `<p>Thanks ${UserName} for your Order </p>`;
+  }
 });
